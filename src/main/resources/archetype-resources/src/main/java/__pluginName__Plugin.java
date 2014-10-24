@@ -21,16 +21,16 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
     }
 
     @Override
-    public void init(Dictionary pluginConfiguration) {
+    public void onStartup(Dictionary pluginConfiguration) {
         // TODO: publish devices -- for example:
-        publishAndStartDevice(new ${pluginName}Device(this, "one", "Example Light"));
+        publishDevice(new ${pluginName}Device(this, "one", "Example Light"));
 
         // set the status to running
         setStatus(new PluginStatus(PluginStatus.Status.RUNNING));
     }
 
     @Override
-    public void stop() {
+    public void onShutdown() {
         // TODO: perform any cleanup
     }
 

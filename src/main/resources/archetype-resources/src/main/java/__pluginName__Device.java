@@ -23,13 +23,13 @@ public class ${pluginName}Device extends AbstractHobsonDevice {
     }
 
     @Override
-    public void startup() {
+    public void onStartup() {
         // TODO: publish device variables -- for example:
         publishVariable(VariableConstants.ON, true, HobsonVariable.Mask.READ_WRITE);
     }
 
     @Override
-    public void shutdown() {
+    public void onShutdown() {
         // TODO: perform any necessary cleanup
     }
 
