@@ -7,8 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.whizzosoftware.hobson.api.plugin.AbstractHobsonPlugin;
-import com.whizzosoftware.hobson.bootstrap.api.config.ConfigurationMetaData;
-import com.whizzosoftware.hobson.bootstrap.api.plugin.PluginStatus;
+import com.whizzosoftware.hobson.api.config.ConfigurationPropertyMetaData;
+import com.whizzosoftware.hobson.api.plugin.PluginStatus;
 
 public class ${pluginName}Plugin extends AbstractHobsonPlugin {
     private final Logger logger = LoggerFactory.getLogger(getClass());
@@ -17,7 +17,7 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
         super(pluginId);
 
         // TODO: add plugin configuration meta-data here -- for example:
-        addConfigurationMetaData(new ConfigurationMetaData("myprop", "Example property", "An example string property", ConfigurationMetaData.Type.STRING));
+        addConfigurationPropertyMetaData(new ConfigurationPropertyMetaData("myprop", "Example property", "An example string property", ConfigurationPropertyMetaData.Type.STRING));
     }
 
     @Override
@@ -42,23 +42,6 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
     @Override
     public String getName() {
         return "Example Plugin";
-    }
-
-    /**
-     * Returns how frequently the refresh method will be called.
-     *
-     * @return an interval in seconds (0 means never)
-     */
-    @Override
-    public long getRefreshInterval() {
-        return 0;
-    }
-
-    /**
-     * Callback method to allow the plugin to refresh itself and its devices.
-     */
-    @Override
-    public void onRefresh() {
     }
 
     /**
