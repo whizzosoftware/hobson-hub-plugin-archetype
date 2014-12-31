@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.whizzosoftware.hobson</groupId>
     <artifactId>hobson-hub-plugin-archetype</artifactId>
-    <version>0.1.8-SNAPSHOT</version>
+    <version>0.1.8</version>
     <name>Hobson Hub Plugin Archetype</name>
     <url>http://www.hobson-automation.com</url>
     <build>
@@ -40,7 +40,7 @@
     <scm>
         <connection>scm:git:ssh://git@github.com/whizzosoftware/hobson-hub-plugin-archetype.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/whizzosoftware/hobson-hub-plugin-archetype.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>hobson-hub-plugin-archetype-0.1.8</tag>
     </scm>
     <distributionManagement>
         <repository>
