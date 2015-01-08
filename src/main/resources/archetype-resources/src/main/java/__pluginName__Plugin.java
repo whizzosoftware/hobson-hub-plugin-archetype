@@ -10,19 +10,23 @@ import com.whizzosoftware.hobson.api.plugin.AbstractHobsonPlugin;
 import com.whizzosoftware.hobson.api.config.ConfigurationPropertyMetaData;
 import com.whizzosoftware.hobson.api.plugin.PluginStatus;
 
+/**
+ * This Hobson plugin was generated from the Hobson Plugin Maven Archetype. Please change this description
+ * accordingly.
+ */
 public class ${pluginName}Plugin extends AbstractHobsonPlugin {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     public ${pluginName}Plugin(String pluginId) {
         super(pluginId);
-
-        // TODO: add plugin configuration meta-data here -- for example:
-        addConfigurationPropertyMetaData(new ConfigurationPropertyMetaData("myprop", "Example property", "An example string property", ConfigurationPropertyMetaData.Type.STRING));
     }
 
     @Override
     public void onStartup(Dictionary pluginConfiguration) {
-        // TODO: publish devices -- for example:
+        // TODO: add configuration property meta-data here (this is how a plugin exposes user-configurablr settings in the web console)
+        addConfigurationPropertyMetaData(new ConfigurationPropertyMetaData("myprop", "Example property", "An example string property", ConfigurationPropertyMetaData.Type.STRING));
+
+        // TODO: publish devices
         publishDevice(new ${pluginName}Device(this, "one", "Example Light"));
 
         // set the status to running
