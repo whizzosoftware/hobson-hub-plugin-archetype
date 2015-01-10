@@ -22,23 +22,40 @@ public class ${pluginName}Device extends AbstractHobsonDevice {
         setDefaultName(defaultName);
     }
 
+    /**
+     * Callback invoked when Hobson activates the device.
+     */
     @Override
     public void onStartup() {
         // TODO: publish device variables -- for example:
         publishVariable(VariableConstants.ON, true, HobsonVariable.Mask.READ_WRITE);
     }
 
+    /**
+     * Callback invoked when Hobson deactivates the device.
+     */
     @Override
     public void onShutdown() {
         // TODO: perform any necessary cleanup
     }
 
+    /**
+     * Returns the device's type.
+     *
+     * @return the device type
+     */
     @Override
     public DeviceType getType() {
         // TODO: return the appropriate device type
         return DeviceType.LIGHTBULB;
     }
 
+    /**
+     * Returns the name of the device's "preferred variable" -- the one variable it deems the most important to expose
+     * to the user. The web console will attempt to render this variable on the device list.
+     *
+     * @return the variable name (or null if it doesn't have one)
+     */
     @Override
     public String getPreferredVariableName() {
         return VariableConstants.ON;

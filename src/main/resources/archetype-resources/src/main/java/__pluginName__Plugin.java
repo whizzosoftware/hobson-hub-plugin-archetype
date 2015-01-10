@@ -21,9 +21,14 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
         super(pluginId);
     }
 
+    /**
+     * Callback invoked when Hobson activates the plugin.
+     *
+     * @param pluginConfiguration the current plugin configuration (will be empty if the plugin is not configured)
+     */
     @Override
     public void onStartup(Dictionary pluginConfiguration) {
-        // TODO: add configuration property meta-data here (this is how a plugin exposes user-configurablr settings in the web console)
+        // TODO: add configuration property meta-data here (this is how a plugin exposes user-configurable settings in the web console)
         addConfigurationPropertyMetaData(new ConfigurationPropertyMetaData("myprop", "Example property", "An example string property", ConfigurationPropertyMetaData.Type.STRING));
 
         // TODO: publish devices
@@ -33,6 +38,9 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
         setStatus(new PluginStatus(PluginStatus.Status.RUNNING));
     }
 
+    /**
+     * Callback invoked when Hobson deactivates the plugin.
+     */
     @Override
     public void onShutdown() {
         // TODO: perform any cleanup
