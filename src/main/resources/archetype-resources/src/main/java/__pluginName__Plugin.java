@@ -1,11 +1,11 @@
 package ${package};
 
 import java.lang.Override;
-import java.util.Dictionary;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.whizzosoftware.hobson.api.config.Configuration;
 import com.whizzosoftware.hobson.api.plugin.AbstractHobsonPlugin;
 import com.whizzosoftware.hobson.api.config.ConfigurationPropertyMetaData;
 import com.whizzosoftware.hobson.api.plugin.PluginStatus;
@@ -19,6 +19,9 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
 
     public ${pluginName}Plugin(String pluginId) {
         super(pluginId);
+
+        // TODO: add configuration property meta-data here (this is how a plugin exposes user-configurable settings in the web console)
+        addConfigurationPropertyMetaData(new ConfigurationPropertyMetaData("myprop", "Example property", "An example string property", ConfigurationPropertyMetaData.Type.STRING));
     }
 
     /**
@@ -27,10 +30,7 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
      * @param pluginConfiguration the current plugin configuration (will be empty if the plugin is not configured)
      */
     @Override
-    public void onStartup(Dictionary pluginConfiguration) {
-        // TODO: add configuration property meta-data here (this is how a plugin exposes user-configurable settings in the web console)
-        addConfigurationPropertyMetaData(new ConfigurationPropertyMetaData("myprop", "Example property", "An example string property", ConfigurationPropertyMetaData.Type.STRING));
-
+    public void onStartup(Configuration pluginConfiguration) {
         // TODO: publish devices
         publishDevice(new ${pluginName}Device(this, "one", "Example Light"));
 
@@ -44,6 +44,7 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
     @Override
     public void onShutdown() {
         // TODO: perform any cleanup
+        super.onShutdown();
     }
 
     /**
@@ -62,6 +63,6 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
      * @param config the new configuration
      */
     @Override
-    public void onPluginConfigurationUpdate(Dictionary config) {
+    public void onPluginConfigurationUpdate(Configuration config) {
     }
 }
