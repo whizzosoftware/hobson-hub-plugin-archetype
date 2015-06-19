@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.whizzosoftware.hobson.api.device.AbstractHobsonDevice;
 import com.whizzosoftware.hobson.api.device.DeviceType;
 import com.whizzosoftware.hobson.api.plugin.HobsonPlugin;
+import com.whizzosoftware.hobson.api.property.PropertyContainer;
 import com.whizzosoftware.hobson.api.variable.HobsonVariable;
 import com.whizzosoftware.hobson.api.variable.VariableConstants;
 
@@ -19,6 +20,9 @@ public class ${pluginName}Device extends AbstractHobsonDevice {
 
     public ${pluginName}Device(HobsonPlugin plugin, String id, String defaultName) {
         super(plugin, id);
+
+        // TODO: add any supported configuration properties this device has
+
         setDefaultName(defaultName);
     }
 
@@ -26,7 +30,7 @@ public class ${pluginName}Device extends AbstractHobsonDevice {
      * Callback invoked when Hobson activates the device.
      */
     @Override
-    public void onStartup() {
+    public void onStartup(PropertyContainer config) {
         // TODO: publish device variables -- for example:
         publishVariable(VariableConstants.ON, true, HobsonVariable.Mask.READ_WRITE);
     }

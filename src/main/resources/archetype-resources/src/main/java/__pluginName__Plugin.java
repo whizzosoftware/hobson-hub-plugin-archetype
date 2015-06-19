@@ -5,10 +5,10 @@ import java.lang.Override;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.whizzosoftware.hobson.api.config.Configuration;
 import com.whizzosoftware.hobson.api.plugin.AbstractHobsonPlugin;
-import com.whizzosoftware.hobson.api.config.ConfigurationPropertyMetaData;
 import com.whizzosoftware.hobson.api.plugin.PluginStatus;
+import com.whizzosoftware.hobson.api.property.PropertyContainer;
+import com.whizzosoftware.hobson.api.property.TypedProperty;
 
 /**
  * This Hobson plugin was generated from the Hobson Plugin Maven Archetype. Please change this description
@@ -21,7 +21,7 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
         super(pluginId);
 
         // TODO: add configuration property meta-data here (this is how a plugin exposes user-configurable settings in the web console)
-        addConfigurationPropertyMetaData(new ConfigurationPropertyMetaData("myprop", "Example property", "An example string property", ConfigurationPropertyMetaData.Type.STRING));
+        addSupportedProperty(new TypedProperty("myprop", "Example property", "An example string property", TypedProperty.Type.STRING));
     }
 
     /**
@@ -30,12 +30,12 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
      * @param pluginConfiguration the current plugin configuration (will be empty if the plugin is not configured)
      */
     @Override
-    public void onStartup(Configuration pluginConfiguration) {
+    public void onStartup(PropertyContainer pluginConfiguration) {
         // TODO: publish devices
         publishDevice(new ${pluginName}Device(this, "one", "Example Light"));
 
         // set the status to running
-        setStatus(new PluginStatus(PluginStatus.Status.RUNNING));
+        setStatus(PluginStatus.running());
     }
 
     /**
@@ -63,6 +63,6 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
      * @param config the new configuration
      */
     @Override
-    public void onPluginConfigurationUpdate(Configuration config) {
+    public void onPluginConfigurationUpdate(PropertyContainer config) {
     }
 }
