@@ -4,7 +4,23 @@
     <artifactId>hobson-hub-plugin-archetype</artifactId>
     <version>0.5.0-SNAPSHOT</version>
     <name>Hobson Hub Plugin Archetype</name>
-    <url>http://www.hobson-automation.com</url>
+    <description>A Maven archetype for creating skeleton Hobson plugin projects.</description>
+    <url>https://github.com/whizzosoftware/hobson-hub-plugin-archetype</url>
+    <licenses>
+        <license>
+            <name>Eclise Public License, Version 1.0</name>
+            <url>https://www.eclipse.org/legal/epl-v10.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Dan Noguerol</name>
+            <email>oss@whizzosoftware.com</email>
+            <organization>Whizzo Software LLC</organization>
+            <organizationUrl>http://www.whizzosoftware.com</organizationUrl>
+        </developer>
+    </developers>
     <build>
         <extensions>
             <extension>
@@ -29,6 +45,13 @@
     </build>
     <repositories>
         <repository>
+            <id>snapshots</id>
+            <url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -43,6 +66,11 @@
         <tag>HEAD</tag>
     </scm>
     <distributionManagement>
+        <snapshotRepository>
+            <id>oss-jfrog-artifactory</id>
+            <name>oss-jfrog-artifactory-snapshots</name>
+            <url>http://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+        </snapshotRepository>
         <repository>
             <id>bintray</id>
             <url>https://api.bintray.com/maven/whizzosoftware/maven/hobson-hub-plugin-archetype</url>
