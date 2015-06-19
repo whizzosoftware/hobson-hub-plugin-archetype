@@ -16,6 +16,7 @@ import com.whizzosoftware.hobson.api.device.AbstractHobsonDevice;
 import com.whizzosoftware.hobson.api.device.DeviceType;
 import com.whizzosoftware.hobson.api.plugin.HobsonPlugin;
 import com.whizzosoftware.hobson.api.property.PropertyContainer;
+import com.whizzosoftware.hobson.api.property.TypedProperty;
 import com.whizzosoftware.hobson.api.variable.HobsonVariable;
 import com.whizzosoftware.hobson.api.variable.VariableConstants;
 
@@ -27,8 +28,6 @@ public class ${pluginName}Device extends AbstractHobsonDevice {
 
     public ${pluginName}Device(HobsonPlugin plugin, String id, String defaultName) {
         super(plugin, id);
-
-        // TODO: add any supported configuration properties this device has
 
         setDefaultName(defaultName);
     }
@@ -91,5 +90,10 @@ public class ${pluginName}Device extends AbstractHobsonDevice {
         // if the device update was successful, notify the framework of the change
         // for this example, we fire the notification immediately
         fireVariableUpdateNotification(name, value);
+    }
+
+    protected TypedProperty[] createSupportedProperties() {
+        // TODO: return any needed supported properties here
+        return null;
     }
 }

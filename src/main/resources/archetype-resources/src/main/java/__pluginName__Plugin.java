@@ -7,8 +7,6 @@
  *******************************************************************************/
 package ${package};
 
-import java.lang.Override;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,9 +24,6 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
 
     public ${pluginName}Plugin(String pluginId) {
         super(pluginId);
-
-        // TODO: add configuration property meta-data here (this is how a plugin exposes user-configurable settings in the web console)
-        addSupportedProperty(new TypedProperty("myprop", "Example property", "An example string property", TypedProperty.Type.STRING));
     }
 
     /**
@@ -71,5 +66,12 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
      */
     @Override
     public void onPluginConfigurationUpdate(PropertyContainer config) {
+    }
+
+    protected TypedProperty[] createSupportedProperties() {
+        // TODO: change to supported properties needed for this plugin (or null for none)
+        return new TypedProperty[] {
+            new TypedProperty("myprop", "Example property", "An example string property", TypedProperty.Type.STRING)
+        };
     }
 }
