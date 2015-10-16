@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import com.whizzosoftware.hobson.api.plugin.AbstractHobsonPlugin;
 import com.whizzosoftware.hobson.api.plugin.PluginStatus;
 import com.whizzosoftware.hobson.api.property.PropertyContainer;
+import com.whizzosoftware.hobson.api.property.PropertyConstraintType;
 import com.whizzosoftware.hobson.api.property.TypedProperty;
 
 /**
