@@ -62,7 +62,7 @@ public class ${pluginName}Device extends AbstractHobsonDevice {
 
     /**
      * Returns the name of the device's "preferred variable" -- the one variable it deems the most important to expose
-     * to the user. The web console will attempt to render this variable on the device list.
+     * to the user. The web console will attempt to render this variable on the dashboard tile.
      *
      * @return the variable name (or null if it doesn't have one)
      */
@@ -92,6 +92,11 @@ public class ${pluginName}Device extends AbstractHobsonDevice {
         fireVariableUpdateNotification(name, value);
     }
 
+    /**
+     * Method that should return all the configurable properties of the device.
+     *
+     * @return an array of TypedProperty objects (or null if there are no configurable properties)
+     */
     protected TypedProperty[] createSupportedProperties() {
         // TODO: return any needed supported properties here
         return null;

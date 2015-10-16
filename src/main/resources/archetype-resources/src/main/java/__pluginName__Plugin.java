@@ -46,7 +46,6 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
     @Override
     public void onShutdown() {
         // TODO: perform any cleanup
-        super.onShutdown();
     }
 
     /**
@@ -56,7 +55,7 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
      */
     @Override
     public String getName() {
-        return "Example Plugin";
+        return "${pluginName} Plugin";
     }
 
     /**
@@ -68,10 +67,17 @@ public class ${pluginName}Plugin extends AbstractHobsonPlugin {
     public void onPluginConfigurationUpdate(PropertyContainer config) {
     }
 
+    /**
+     * Method that should return all the configurable properties this plugin supports.
+     *
+     * @return an array of TypedProperty objects (or null if there are no configurable properties)
+     */
     protected TypedProperty[] createSupportedProperties() {
-        // TODO: change to supported properties needed for this plugin (or null for none)
+        // TODO: change to supported properties needed for this plugin (or return null for none)
         return new TypedProperty[] {
-            new TypedProperty("myprop", "Example property", "An example string property", TypedProperty.Type.STRING)
+            new TypedProperty.Builder("myprop", "Example property", "An example required string property", TypedProperty.Type.STRING).
+                constraint(PropertyConstraintType.required, true).
+                build()
         };
     }
 }
