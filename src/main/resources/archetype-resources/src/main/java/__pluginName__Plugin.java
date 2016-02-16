@@ -21,7 +21,7 @@ import com.whizzosoftware.hobson.api.property.TypedProperty;
  * accordingly.
  */
 public class ${pluginName}Plugin extends AbstractHobsonPlugin {
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+    private static final Logger logger = LoggerFactory.getLogger(${pluginName}Plugin.class);
 
     public ${pluginName}Plugin(String pluginId) {
         super(pluginId);

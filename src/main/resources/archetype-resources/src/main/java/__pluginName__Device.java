@@ -24,7 +24,7 @@ import com.whizzosoftware.hobson.api.variable.VariableConstants;
  * This is an example device that has a single variable - "on"
  */
 public class ${pluginName}Device extends AbstractHobsonDevice {
-    private final Logger logger = LoggerFactory.getLogger(getClass());
+    private static final Logger logger = LoggerFactory.getLogger(${pluginName}Device.class);
 
     public ${pluginName}Device(HobsonPlugin plugin, String id, String defaultName) {
         super(plugin, id);
@@ -38,7 +38,7 @@ public class ${pluginName}Device extends AbstractHobsonDevice {
     @Override
     public void onStartup(PropertyContainer config) {
         // TODO: publish device variables -- for example:
-        publishVariable(VariableConstants.ON, true, HobsonVariable.Mask.READ_WRITE);
+        publishVariable(VariableConstants.ON, true, HobsonVariable.Mask.READ_WRITE, System.currentTimeMillis());
     }
 
     /**
