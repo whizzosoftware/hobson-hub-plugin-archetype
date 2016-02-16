@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.whizzosoftware.hobson</groupId>
     <artifactId>hobson-hub-plugin-archetype</artifactId>
-    <version>0.8.0</version>
+    <version>0.8.1-SNAPSHOT</version>
     <name>Hobson Hub Plugin Archetype</name>
     <description>A Maven archetype for creating skeleton Hobson plugin projects.</description>
     <url>https://github.com/whizzosoftware/hobson-hub-plugin-archetype</url>
@@ -63,7 +63,7 @@
     <scm>
         <connection>scm:git:ssh://git@github.com/whizzosoftware/hobson-hub-plugin-archetype.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/whizzosoftware/hobson-hub-plugin-archetype.git</developerConnection>
-        <tag>hobson-hub-plugin-archetype-0.8.0</tag>
+        <tag>hobson-hub-plugin-archetype-0.6.0</tag>
     </scm>
     <distributionManagement>
         <snapshotRepository>
